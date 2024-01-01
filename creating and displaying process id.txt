@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<unistd.h>
+main()
+{
+pid_t pid;
+printf("\nhi i am parent process my pid=%d i am going to create a child\n",getpid());
+pid=fork();
+printf("\ncommon area-1 now accessed by pid=%d \n",getpid());
+if(pid==0)
+printf("\nhi i am child process my pid=%d my parents pid=%d \n",getpid(),getppid());
+else if(pid>0)
+printf("\nthis is parent's private area\n");
+else if(pid<0)
+printf("\nerror creating process\n");
+else
+printf("\nunknown error\n");
+printf("\ncommon area-2 now accessed by pid=%d \n",getpid());
+}

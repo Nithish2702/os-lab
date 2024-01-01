@@ -1,0 +1,15 @@
+clear
+echo "shell script to find existance of file"
+echo -n "enter a file name = "
+read a
+if [ ! -f $a ]
+then
+clear
+echo "given file does not exist"
+else
+clear
+echo "given file exists"
+fi
+echo "press enter to continue.."
+read a
+clear

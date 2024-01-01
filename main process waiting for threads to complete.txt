@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<pthread.h>
+void* hi()
+{
+int a;
+printf("\n I am a thread. \n");
+printf("\n Enter a value.\n");
+scanf("%d",&a);
+printf("a= %d",a);
+}
+int main()
+{
+pthread_t tid;
+printf("\n I am main process.\n");
+pthread_create(&tid,NULL,hi,NULL);
+pthread_join(tid,NULL); //sleep() partially work & wait() does not work
+printf("\nI came back to the main process.\n");
+}

@@ -1,0 +1,35 @@
+clear
+echo "shell script for driving license validation"
+echo -n "enter your age = "
+read age
+clear
+if [ $age -lt 16 ]
+then
+echo "you are not eligible for driving license"
+elif [ $age -eq 16 -o $age -eq 17 ]
+then
+echo "you are only eligible for lerners license"
+elif [ $age -ge 18 ]
+then
+echo -n "do you have lerners license (yes=1/no=0)? "
+read ll
+clear
+if [ $ll -eq 0 ]
+then
+echo "please apply lerners license first"
+else
+echo -n "how many days have passed since issue of lerners license = "
+read lldays
+clear
+if [ $lldays -lt 30 ]
+then
+echo "please wait for more "$((30-lldays))"day(s) for applying permanent driving
+license"
+else
+echo "you are eligible for appliying for permanent driving license"
+fi
+fi
+fi
+echo "please click enter to continue..."
+read a
+clear

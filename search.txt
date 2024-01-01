@@ -1,0 +1,29 @@
+clear
+echo "shell script to search a number in a given array"
+echo -n "enter array size = "
+read n
+echo "enter array values - "
+i=1
+while [ $i -le $n ]
+do
+read a[$i]
+i=$((i+1))
+done
+clear
+echo -n "enter a value to search in array = "
+read v
+clear
+i=1
+f="given value not found"
+while [ $i -le $n ]
+do
+if [ $((a[i])) -eq $v ]
+then
+f="given value found at location "$i
+fi
+i=$((i+1))
+done
+echo $f
+echo "please click enter to continue..."
+read x
+clear

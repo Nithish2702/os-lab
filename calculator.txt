@@ -1,0 +1,26 @@
+clear
+echo "shell script for comman line calculator"
+echo -n "enter a number = "
+read a
+echo -n "enter another number = "
+read b
+clear
+echo "available operations -"
+echo "1) Addition"
+echo "2) Substraction"
+echo "3) Multiplication"
+echo "4) Division"
+echo "please enter your choice from the above menu -"
+read c
+clear
+case $c in
+1) s="Addition = "$((a+b));;
+2) s="Substracion = "$((a-b));;
+3) s="Multipliation = "$((a*b));;
+4) s="Division = "$((a/b));;
+*) s="invalid option";;
+esac
+echo $s
+echo "please click enter to continue..."
+read a
+clear

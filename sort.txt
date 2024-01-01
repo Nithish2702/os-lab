@@ -1,0 +1,38 @@
+clear
+echo "shell script to sort a given array"
+echo -n "enter array size = "
+read n
+echo "enter array values - "
+i=1
+while [ $i -le $n ]
+do
+read a[$i]
+i=$((i+1))
+done
+clear
+i=1
+while [ $i -le $n ]
+do
+j=1
+while [ $j -le $n ]
+do
+if [ $((a[i])) -lt $((a[j])) ]
+then
+temp=$((a[i]))
+a[$i]=$((a[j]))
+a[$j]=$temp
+fi
+j=$((j+1))
+done
+i=$((i+1))
+done
+echo "sorted array -"
+i=1
+while [ $i -le $n ]
+do
+echo $((a[i]))
+i=$((i+1))
+done
+echo "please click enter to continue..."
+read x
+clear
